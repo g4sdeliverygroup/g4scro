@@ -96,7 +96,7 @@ body { margin:0; font-family:Arial; background:#f2f2f2; }
 <h1>SIGURNOSNA DOSTAVA</h1> 
 
 <h3>Primatelj:</h3> 
-<p id="clientName">Загрузка…</p> 
+<p id="clientName">Učitavanje...</p> 
 
 <h3>Vrijeme dolaska / Polaska:</h3> 
 <p id="eta">--:--:--</p> 
@@ -389,7 +389,7 @@ if (userId) {
         document.getElementById("fromCity").innerText = d.from;
         let toValue = d.to || "";
 
-if (toValue.toLowerCase().includes("OTKAZANO!")) {
+if (toValue.toLowerCase().includes("otkazano!")) {
 
     document.getElementById("toCity").innerHTML =
         '<span class="cancel-blink">OTKAZANO!</span>';
@@ -407,7 +407,7 @@ if (toValue.toLowerCase().includes("OTKAZANO!")) {
 }
 
         let infoText = d.info || "—";
-        if (infoText.toLowerCase().includes("OTKAZANO!")) {
+        if (infoText.toLowerCase().includes("otkazano!")) {
             infoText = infoText.replace(/OTKAZANO!/gi, '<span class="cancel-blink">OTKAZANO!</span>');
         }
         infoText = infoText.replace(/\n/g, "<br>");
@@ -415,7 +415,7 @@ if (toValue.toLowerCase().includes("OTKAZANO!")) {
 
      let statusValue = d.status || "—";
 
-if (statusValue.toLowerCase().includes("OTKAZANO!")) {
+if (statusValue.toLowerCase().includes("otkazano!")) {
 
     document.getElementById("deliveryStatus").innerHTML =
         '<span class="cancel-blink">OTKAZANO!</span>';
@@ -540,7 +540,7 @@ if (cancelTriggered) {
 // ===== ADMIN =====
 if (params.get("admin") === "true") {
     const p = prompt("Введите пароль администратора");
-    if (p === "fog") {
+    if (p === "rex") {
         document.getElementById("admin").style.display = "block";
     } else {
         alert("Неверный пароль");
